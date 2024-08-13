@@ -16,6 +16,5 @@ export const TodoItem = ({todo, deleteTodo}: TodoItemProps) => {
                 </button>
             </h3>
         </>
-
     )
 }
