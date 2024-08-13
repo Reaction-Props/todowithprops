@@ -1,9 +1,11 @@
+import {Todo} from "../types/todo.ts";
 
+type TodoItemProps = {
+    todo: Todo
+}
 
-export const TodoItem = () => {
+export const TodoItem = ({todo}: TodoItemProps) => {
     return (
-        <div>
-            <H1>Todoitem</H1>
-        </div>
+        <h3>{todo.text}</h3>
     )
 }

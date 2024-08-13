@@ -1,6 +1,16 @@
+import {Todo} from "../types/todo.ts";
+import {TodoItem} from "./TodoItem.tsx";
 
-export const TodoList = () => {
+export type TodoListProps = {
+    todo: Todo[]
+}
+
+export const TodoList = ({todo}: TodoListProps) => {
     return (
-        <div>TodoList</div>
+        <div>
+            {todo.map((todo) => (
+                <TodoItem key={todo.id} todo={todo}/>
+            ))}
+        </div>
     )
 }
