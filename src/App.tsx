@@ -3,6 +3,7 @@ import {Todo} from "./types/todo.ts";
 import {useState} from "react";
 import {TodoList} from "./components/TodoList.tsx";
 import {TodoInput} from "./components/TodoInput.tsx";
+import {Header} from "./components/Header.tsx";
 
 function App() {
 
@@ -18,13 +19,18 @@ function App() {
         setTodos(newTodos);
     }
 
+    const deleteTodo = (id: number) => {
+        const newTodos = todos.filter((todo) => todo.id !== id)
+        setTodos(newTodos)
+    }
 
 
     return (
         <div className="App">
+            <Header/>
             <h1>Todo</h1>
             <TodoInput addTodo={addTodo}/>
-            <TodoList todo={todos}/>
+            <TodoList todo={todos} deleteTodo={deleteTodo}/>
         </div>
     )
 }
